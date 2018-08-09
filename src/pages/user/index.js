@@ -9,11 +9,10 @@ import List from './components/List'
 import Filter from './components/Filter'
 import Modal from './components/Modal'
 
-
 const User = ({
-  location, dispatch, user, loading,
-}) => {
-  const { query, pathname } = location
+                location, dispatch, user, loading,
+              }) => {
+  const {query, pathname} = location
   const {
     list, pagination, currentItem, modalVisible, modalType, isMotion, selectedRowKeys,
   } = user
@@ -116,7 +115,7 @@ const User = ({
       })
     },
     switchIsMotion () {
-      dispatch({ type: 'user/switchIsMotion' })
+      dispatch({type: 'user/switchIsMotion'})
     },
   }
 
@@ -139,11 +138,11 @@ const User = ({
       <Filter {...filterProps} />
       {
         selectedRowKeys.length > 0 &&
-        <Row style={{ marginBottom: 24, textAlign: 'right', fontSize: 13 }}>
+        <Row style={{marginBottom: 24, textAlign: 'right', fontSize: 13}}>
           <Col>
             {`Selected ${selectedRowKeys.length} items `}
             <Popconfirm title="Are you sure delete these items?" placement="left" onConfirm={handleDeleteItems}>
-              <Button type="primary" style={{ marginLeft: 8 }}>Remove</Button>
+              <Button type="primary" style={{marginLeft: 8}}>Remove</Button>
             </Popconfirm>
           </Col>
         </Row>
@@ -161,4 +160,4 @@ User.propTypes = {
   loading: PropTypes.object,
 }
 
-export default connect(({ user, loading }) => ({ user, loading }))(User)
+export default connect(({user, loading}) => ({user, loading}))(User)

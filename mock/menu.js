@@ -16,13 +16,6 @@ let database = [
     route: '/user',
   },
   {
-    id: '7',
-    bpid: '1',
-    name: 'Posts',
-    icon: 'shopping-cart',
-    route: '/post',
-  },
-  {
     id: '21',
     mpid: '-1',
     bpid: '2',
@@ -154,6 +147,20 @@ let database = [
     name: 'Test Navigation22',
     route: '/navigation/navigation2/navigation2',
   },
+  {
+    id: '7',
+    bpid: '1',
+    name: 'Posts',
+    icon: 'shopping-cart',
+    route: '/post',
+  },
+  {
+    id: '8',
+    bpid: '1',
+    name: 'Contact',
+    icon: 'user',
+    route: '/contact',
+  }
 ]
 
 module.exports = {
