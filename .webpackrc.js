@@ -1,32 +1,29 @@
-import { resolve } from 'path';
+const path = require('path');
 
 export default {
-  theme: "./theme.config.js",
-  // 接口代理示例
-  proxy: {
-    "/api/v1/weather": {
-      "target": "https://api.seniverse.com/",
-      "changeOrigin": true,
-      "pathRewrite": { "^/api/v1/weather": "/v3/weather" }
+  entry: 'src/index.js',
+  extraBabelPlugins: [['import', { libraryName: 'antd', libraryDirectory: 'es', style: true }]],
+  env: {
+    development: {
+      extraBabelPlugins: ['dva-hmr'],
     },
-    // "/api/v2": {
-    //   "target": "http://192.168.0.110",
-    //   "changeOrigin": true,
-    //   "pathRewrite": { "^/api/v2" : "/api/v2" }
-    // }
+  },
+  externals: {
+    '@antv/data-set': 'DataSet',
+    rollbar: 'rollbar',
   },
   alias: {
-    themes: resolve(__dirname, './src/themes'),
-    components: resolve(__dirname,"./src/components"),
-    utils: resolve(__dirname,"./src/utils"),
-    config: resolve(__dirname,"./src/utils/config"),
-    enums: resolve(__dirname,"./src/utils/enums"),
-    services: resolve(__dirname,"./src/services"),
-    models: resolve(__dirname,"./src/models"),
-    routes: resolve(__dirname,"./src/routes"),
+    components: path.resolve(__dirname, 'src/components/'),
   },
-  urlLoaderExcludes: [
-    /\.svg$/,
-  ],
   ignoreMomentLocale: true,
-}
+  theme: './src/theme.js',
+  html: {
+    template: './src/index.ejs',
+  },
+  lessLoaderOptions: {
+    javascriptEnabled: true,
+  },
+  disableDynamicImport: true,
+  publicPath: '/',
+  hash: true,
+};
