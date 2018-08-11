@@ -170,6 +170,26 @@ export const getRouterData = app => {
     '/user/register-result': {
       component: dynamicWrapper(app, [], () => import('../routes/User/RegisterResult')),
     },
+    // START 生物注册网
+    '/bioregis/news-list': {
+      component: dynamicWrapper(app, ['list'], () => import('../routes/List/TableList')),
+    },
+    '/bioregis/articles-list': {
+      component: dynamicWrapper(app, ['list'], () => import('../routes/List/BasicList')),
+    },
+    '/bioregis/orders-list': {
+      component: dynamicWrapper(app, ['list'], () => import('../routes/List/BasicList')),
+    },
+    '/bioregis/products-list': {
+      component: dynamicWrapper(app, ['list'], () => import('../routes/List/BasicList')),
+    },
+    '/bioregis/users-list': {
+      component: dynamicWrapper(app, ['list'], () => import('../routes/List/BasicList')),
+    },
+    '/bioregis/contacts-list': {
+      component: dynamicWrapper(app, ['list'], () => import('../routes/List/BasicList')),
+    },
+    // END 生物注册网
     // '/user/:id': {
     //   component: dynamicWrapper(app, [], () => import('../routes/User/SomeComponent')),
     // },

@@ -154,6 +154,38 @@ const menuData = [
       },
     ],
   },
+  {
+    name: '生物注册网',
+    icon: 'user',
+    path: 'bioregis',
+    // authority: 'guest',
+    children: [
+      {
+        name: '新闻列表',
+        path: 'news-list',
+      },
+      {
+        name: '文章列表',
+        path: 'articles-list',
+      },
+      {
+        name: '订单列表',
+        path: 'orders-list',
+      },
+      {
+        name: '产品列表',
+        path: 'products-list',
+      },
+      {
+        name: '用户列表 ',
+        path: 'users-list',
+      },
+      {
+        name: '联系列表',
+        path: 'contacts-list',
+      },
+    ],
+  },
 ];
 
 function formatter(data, parentPath = '/', parentAuthority) {
