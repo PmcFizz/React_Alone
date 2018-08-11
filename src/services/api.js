@@ -10,8 +10,38 @@ export async function queryActivities() {
 }
 
 export async function queryRule(params) {
-  return request(`http://localhost:3000/biology/findAllNews`);
+  return request(`/api/rule?${stringify(params)}`);
 }
+
+export async function findAllNews(params) {
+  return request(`http://localhost:3000/biology/findAllNews`,params);
+}
+
+
+export async function findAllArticles(params) {
+  return request(`http://localhost:3000/biology/findAllArticles`,params);
+}
+
+
+export async function findAllOrders(params) {
+  return request(`http://localhost:3000/biology/findAllOrders`,params);
+}
+
+
+export async function findAllProducts(params) {
+  return request(`http://localhost:3000/biology/findAllProducts`,params);
+}
+
+
+export async function findAllUsers(params) {
+  return request(`http://localhost:3000/biology/findAllUsers`,params);
+}
+
+
+export async function findAllContacts(params) {
+  return request(`http://localhost:3000/biology/findAllContacts`,params);
+}
+
 
 export async function removeRule(params) {
   return request('/api/rule', {

@@ -27,7 +27,7 @@ export default class TableList extends PureComponent {
   componentDidMount () {
     const {dispatch} = this.props
     dispatch({
-      type: 'bioregis/findAllNews',
+      type: 'bioregis/findAllArticles',
     })
   }
 
@@ -52,7 +52,7 @@ export default class TableList extends PureComponent {
     }
 
     dispatch({
-      type: 'bioregis/findAllNews',
+      type: 'bioregis/findAllArticles',
       payload: params,
     })
   }
@@ -81,7 +81,7 @@ export default class TableList extends PureComponent {
       },
       {
         title: '创建时间',
-        dataIndex: 'created_date',
+        dataIndex: 'publish_date',
       },
       {
         title: '状态',
@@ -90,7 +90,7 @@ export default class TableList extends PureComponent {
     ]
 
     return (
-      <PageHeaderLayout title="新闻列表">
+      <PageHeaderLayout title="文章列表">
         <Card bordered={false}>
           <div className={styles.tableList}>
             <StandardTable

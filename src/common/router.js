@@ -172,22 +172,22 @@ export const getRouterData = app => {
     },
     // START 生物注册网
     '/bioregis/news-list': {
-      component: dynamicWrapper(app, ['list'], () => import('../routes/List/bioregis/NewsList')),
+      component: dynamicWrapper(app, ['bioregis'], () => import('../routes/List/bioregis/NewsList')),
     },
     '/bioregis/articles-list': {
-      component: dynamicWrapper(app, ['list'], () => import('../routes/List/BasicList')),
+      component: dynamicWrapper(app, ['bioregis'], () => import('../routes/List/bioregis/ArticlesList')),
     },
     '/bioregis/orders-list': {
-      component: dynamicWrapper(app, ['list'], () => import('../routes/List/BasicList')),
+      component: dynamicWrapper(app, ['bioregis'], () => import('../routes/List/bioregis/OrdersList')),
     },
     '/bioregis/products-list': {
-      component: dynamicWrapper(app, ['list'], () => import('../routes/List/BasicList')),
+      component: dynamicWrapper(app, ['bioregis'], () => import('../routes/List/bioregis/ProductsList')),
     },
     '/bioregis/users-list': {
-      component: dynamicWrapper(app, ['list'], () => import('../routes/List/BasicList')),
+      component: dynamicWrapper(app, ['bioregis'], () => import('../routes/List/bioregis/UsersList')),
     },
     '/bioregis/contacts-list': {
-      component: dynamicWrapper(app, ['list'], () => import('../routes/List/BasicList')),
+      component: dynamicWrapper(app, ['bioregis'], () => import('../routes/List/bioregis/ContactsList')),
     },
     // END 生物注册网
     // '/user/:id': {
