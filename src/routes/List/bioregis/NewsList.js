@@ -9,7 +9,7 @@ import {
 import StandardTable from 'components/StandardTable'
 import PageHeaderLayout from '../../../layouts/PageHeaderLayout'
 
-import styles from '.././TableList.less'
+import styles from '../TableList.less'
 
 const getValue = obj =>
   Object.keys(obj)
@@ -78,56 +78,19 @@ export default class TableList extends PureComponent {
     const columns = [
       {
         title: '标题',
-        dataIndex: 'no',
+        dataIndex: 'title',
       },
       {
         title: '内容',
-        dataIndex: 'description',
+        dataIndex: 'content',
       },
       {
         title: '创建时间',
-        dataIndex: 'callNo',
-        sorter: true,
-        align: 'right',
-        render: val => `${val} 万`,
-        // mark to display a total number
-        needTotal: true,
+        dataIndex: 'created_date',
       },
       {
         title: '状态',
-        dataIndex: 'status',
-        filters: [
-          {
-            text: status[0],
-            value: 0,
-          },
-          {
-            text: status[1],
-            value: 1,
-          },
-          {
-            text: status[2],
-            value: 2,
-          },
-          {
-            text: status[3],
-            value: 3,
-          },
-        ],
-        onFilter: (value, record) => record.status.toString() === value,
-        render (val) {
-          return <Badge status={statusMap[val]} text={status[val]}/>
-        },
-      },
-      {
-        title: '操作',
-        render: () => (
-          <Fragment>
-            <a href="">配置</a>
-            <Divider type="vertical"/>
-            <a href="">订阅警报</a>
-          </Fragment>
-        ),
+        dataIndex: 'state',
       },
     ]
 
@@ -138,6 +101,7 @@ export default class TableList extends PureComponent {
             <StandardTable
               selectedRows={selectedRows}
               loading={loading}
+              rowKey="id"
               data={data}
               columns={columns}
               onSelectRow={this.handleSelectRows}

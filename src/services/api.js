@@ -10,7 +10,7 @@ export async function queryActivities() {
 }
 
 export async function queryRule(params) {
-  return request(`/api/rule?${stringify(params)}`);
+  return request(`http://localhost:3000/biology/findAllNews`);
 }
 
 export async function removeRule(params) {
