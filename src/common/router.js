@@ -172,7 +172,7 @@ export const getRouterData = app => {
     },
     // START 生物注册网
     '/bioregis/news-list': {
-      component: dynamicWrapper(app, ['list'], () => import('../routes/List/TableList')),
+      component: dynamicWrapper(app, ['list'], () => import('../routes/List/bioregis/NewsList')),
     },
     '/bioregis/articles-list': {
       component: dynamicWrapper(app, ['list'], () => import('../routes/List/BasicList')),
