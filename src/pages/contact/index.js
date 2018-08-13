@@ -24,7 +24,7 @@ const Index = ({
   const listProps = {
     pagination,
     dataSource: list,
-    loading: loading.effects['post/query'],
+    loading: loading.effects['contact/query'],
     onChange (page) {
       dispatch(routerRedux.push({
         pathname,
